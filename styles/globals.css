@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for the Light theme */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    /* Add a subtle gradient background */
+    @apply bg-gradient-to-b from-primary-bg to-secondary-bg text-text-body; 
+    font-family: 'Inter', sans-serif;
+  }
+  *:focus-visible {
+     /* Adjust focus ring for light theme */
+     @apply outline-none ring-2 ring-accent-primary ring-offset-2 ring-offset-primary-bg;
+  }
+}
+
+/* Custom component styles for the light theme */
+@layer components {
+  .btn-primary {
+    /* Vibrant blue button */
+    @apply bg-accent-primary text-text-on-accent font-bold py-2.5 px-6 rounded 
+           shadow-md hover:bg-blue-600 hover:shadow-glow-primary 
+           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    /* Outline button */
+    @apply bg-transparent text-accent-primary border-2 border-accent-primary font-semibold py-2 px-6 rounded 
+           hover:bg-accent-primary hover:text-text-on-accent 
+           transition-all duration-300 ease-in-out transform hover:-translate-y-0.5;
+  }
+
+  .section-heading {
+     /* Use darker text color for headings */
+     @apply text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-text-heading;
+  }
+
+  .card-base {
+     /* Light background, subtle border, standard shadow */
+     @apply bg-primary-bg border border-accent-secondary rounded-lg shadow-card-shadow overflow-hidden transition-all duration-300;
+  }
+  .card-hover {
+     /* Slightly lift card or increase shadow on hover */
+     @apply hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Utility overrides or additions */
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+} 
